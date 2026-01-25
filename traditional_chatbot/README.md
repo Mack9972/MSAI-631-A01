@@ -2,17 +2,20 @@
 
 Simple, rule-based chatbot (no LLMs).
 
+## Design notes
+- Pure Python (no third-party dependencies required)
+- Small, curated FAQ in `corpus.json` to avoid random answers
+
 ## Run
 ```bash
 python3 chatbot.py
 ```
 
-## Build a larger corpus (Persona-Chat + DailyDialog)
-Requires: `datasets` library and network access to download the data once.
-Defaults to `pixelsandpointers/better_daily_dialog` and `yatsby/persona_chat`.
+## Optional: build a larger corpus from HuggingFace datasets
+Requires: `datasets` and network access to download the data once.
 
 ```bash
-python3 scripts/prepare_corpus.py --out corpus.json --max-pairs 50000
+python3 scripts/prepare_corpus.py --out corpus.json --max-pairs 5000
 ```
 
 ## Example prompts
