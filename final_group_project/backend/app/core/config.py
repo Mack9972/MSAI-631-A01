@@ -17,8 +17,8 @@ AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-pre
 RAG_KB_DIR = Path(os.getenv("RAG_KB_DIR", BASE_DIR / "knowledge_base"))
 
 _default_kb_paths = [
-    BASE_DIR / "LLM_Chatbot_Design_Report.docx",
-    BASE_DIR / "Group_Project_Proposal_Full_RAG_Bilingual_Assistant.docx",
+    BASE_DIR / "knowledge_base" / "LLM_Chatbot_Design_Report.docx",
+    BASE_DIR / "knowledge_base" / "Group_Project_Proposal_Full_RAG_Bilingual_Assistant.docx",
 ]
 _raw_kb_paths = os.getenv("RAG_KB_PATHS", ",".join(str(path) for path in _default_kb_paths))
 RAG_KB_PATHS = [

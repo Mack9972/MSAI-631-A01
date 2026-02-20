@@ -27,7 +27,7 @@ AZURE_OPENAI_ENDPOINT="https://<your-resource-name>.openai.azure.com"
 AZURE_OPENAI_API_KEY="your-key"
 AZURE_OPENAI_DEPLOYMENT="your-deployment-name"
 AZURE_OPENAI_API_VERSION="2024-12-01-preview"
-RAG_KB_PATHS="LLM_Chatbot_Design_Report.docx,Group_Project_Proposal_Full_RAG_Bilingual_Assistant.docx"
+RAG_KB_PATHS="knowledge_base/LLM_Chatbot_Design_Report.docx,knowledge_base/Group_Project_Proposal_Full_RAG_Bilingual_Assistant.docx"
 RAG_KB_DIR="knowledge_base"
 CORS_ORIGINS="http://localhost:5173"
 ```
