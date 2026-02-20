@@ -1,0 +1,10 @@
+fastapi==0.110.0
+uvicorn==0.27.1
+pydantic==2.6.1
+python-dotenv==1.0.1
+urllib3<2
+
+# Optional: enable local semantic search
+numpy==1.26.4
+scikit-learn==1.4.0
+sentence-transformers==2.5.1

@@ -1,0 +1,73 @@
+@startuml
+title Final Group Project: Hybrid RAG + General LLM Architecture
+caption FastAPI backend routes each query to grounded RAG or general LLM based on retrieval relevance.
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 12
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam linetype ortho
+
+actor User
+
+rectangle "React Frontend (Vite)\nChat UI + include_english toggle" as FE #D8EBFF
+rectangle "FastAPI Controller\nPOST /api/translate" as API #E2E8F0
+
+package "Main Request Flow" #EEF2FF {
+  rectangle "RuleBasedService\n(deterministic intents)" as RULE #DCFCE7
+  rectangle "CorpusRepository\nretrieve_context(k=4)" as REPO #FEE2E2
+  rectangle "Relevance Gate\n_is_rag_relevant()" as GATE #FFEDD5
+
+  together {
+    rectangle "RAG Prompt Path\n(use retrieved context only)" as RAG #E0F2FE
+    rectangle "General LLM Path\n(no RAG restriction)" as GEN #FEF3C7
+  }
+
+  rectangle "LLMService\nAzure OpenAI chat_completion" as LLM #F3E8FF
+  rectangle "TranslationService\nEnglish -> Spanish" as TR #FCE7F3
+  rectangle "API Response\n{ spanish, english(optional) }" as RESP #DCFCE7
+}
+
+package "Retrieval Side Flow (Knowledge Base)" #F1F5F9 {
+  rectangle "Auto refresh on file changes" as REFRESH
+  rectangle "KB Documents\n.docx, .txt, .md, .json, .csv" as KB
+  rectangle "Chunking + normalization\n+ source metadata" as CHUNK
+  rectangle "Retriever\nSentenceTransformer (preferred)\nor TF-IDF fallback" as RET
+}
+
+User --> FE
+FE --> API
+API --> RULE
+RULE --> REPO
+REPO --> GATE
+
+GATE --> RAG : relevant context
+GATE --> GEN : low/no relevance
+
+RAG --> LLM
+GEN --> LLM
+
+RAG ..> REPO : extractive fallback (RAG-relevant only)
+
+LLM --> TR
+TR --> RESP
+RESP --> API
+API --> FE
+
+KB --> CHUNK
+CHUNK --> RET
+REFRESH --> REPO
+RET --> REPO : top-k chunks + scores
+
+note right of GATE
+Routing policy:
+- If top retrieved context is relevant: use RAG prompt path
+- Else: use general LLM prompt path
+end note
+
+note bottom of KB
+Default KB includes project proposal and design report documents.
+end note
+
+@enduml

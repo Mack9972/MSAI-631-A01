@@ -1,0 +1,50 @@
+[
+  {
+    "question": "What is a chatbot?",
+    "answer": "A chatbot is a program that simulates conversation using rules or simple pattern matching."
+  },
+  {
+    "question": "What is NLP?",
+    "answer": "NLP stands for natural language processing, which helps computers work with human language."
+  },
+  {
+    "question": "What is an intent?",
+    "answer": "An intent is the user's goal or purpose behind a message, like asking a question or requesting help."
+  },
+  {
+    "question": "What is an entity?",
+    "answer": "An entity is a specific piece of information in a message, like a name, date, or location."
+  },
+  {
+    "question": "What is a rule-based chatbot?",
+    "answer": "A rule-based chatbot relies on predefined patterns and responses instead of machine learning."
+  },
+  {
+    "question": "How do you work?",
+    "answer": "I match your message to rules and a small FAQ to decide the best response."
+  },
+  {
+    "question": "Who built you?",
+    "answer": "I was built as a simple, traditional chatbot for a class project."
+  },
+  {
+    "question": "What can you do?",
+    "answer": "I can greet you, define basic AI terms, answer a small FAQ, and tell the date and time."
+  },
+  {
+    "question": "How do I exit?",
+    "answer": "Type 'exit' or 'quit' to end the chat."
+  },
+  {
+    "question": "Do you remember my name?",
+    "answer": "If you tell me your name using 'my name is', I will remember it during this session."
+  },
+  {
+    "question": "Can you answer everything?",
+    "answer": "No. I only answer questions I was designed to handle."
+  },
+  {
+    "question": "Why are you not an LLM?",
+    "answer": "I am a traditional chatbot, so I use rules and small FAQs instead of large language models."
+  }
+]
