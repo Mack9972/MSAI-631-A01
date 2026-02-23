@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Team collaboration in accessible workspace</title>
+  <desc id="desc">Three people collaborating around a table with laptops and notes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e8f4ff" />
+      <stop offset="100%" stop-color="#ffe8d6" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)" />
+  <rect x="220" y="220" width="760" height="260" rx="24" fill="#ffffff" stroke="#8ca7bf" stroke-width="4" />
+  <circle cx="360" cy="180" r="52" fill="#2f5d62" />
+  <circle cx="600" cy="170" r="52" fill="#b42318" />
+  <circle cx="840" cy="180" r="52" fill="#3f7d20" />
+  <rect x="300" y="300" width="180" height="110" rx="10" fill="#dbe6ff" />
+  <rect x="510" y="300" width="180" height="110" rx="10" fill="#ffe0b8" />
+  <rect x="720" y="300" width="180" height="110" rx="10" fill="#d7f4d2" />
+</svg>
